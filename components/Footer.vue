@@ -1,15 +1,11 @@
 <script setup lang="ts">
-const { t } = useI18n({
-  useScope: "local",
-});
-
 const links = [
   {
-    label: t("projects"),
+    label: "Projects",
     to: "/projects",
   },
   {
-    label: t("blog"),
+    label: "Blog",
     to: "/blog",
   },
   {
@@ -30,14 +26,3 @@ const links = [
     <template #right> Made in 2024 </template>
   </UFooter>
 </template>
-<i18n lang="yaml">
-en:
-  projects: "Projects"
-  blog: "Blog"
-tr:
-  projects: "Projeler"
-  blog: "Blog"
-ja:
-  projects: "プロジェクト"
-  blog: "ブログ"
-</i18n>

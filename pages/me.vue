@@ -3,9 +3,6 @@
 import { toRaw } from "vue";
 
 const { isMobileOrTablet } = useDevice();
-const { t } = useI18n({
-  useScope: "local",
-});
 </script>
 <template>
   <div class="bg-gray-900 my-10">

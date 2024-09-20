@@ -2,26 +2,23 @@
 //@ts-nocheck
 const { isMobileOrTablet } = useDevice();
 const route = useRoute();
-const { t } = useI18n({
-  useScope: "local",
-});
 
 const links = [
   [
     {
-      label: isMobileOrTablet ? "" : t("home"),
+      label: isMobileOrTablet ? "" : "Home",
       icon: "i-material-symbols-home",
       to: "/",
       class: "after:bg-blue-500 dark:after:bg-blue-400",
     },
     {
-      label: isMobileOrTablet ? "" : t("projects"),
+      label: isMobileOrTablet ? "" : "Projects",
       icon: "material-symbols-deployed-code",
       to: `/projects`,
       class: "after:bg-blue-500 dark:after:bg-blue-400",
     },
     {
-      label: isMobileOrTablet ? "" : t("blog"),
+      label: isMobileOrTablet ? "" : "Blog",
       icon: "material-symbols-article",
       to: "/blog",
       class: "after:bg-blue-500 dark:after:bg-blue-400",
@@ -29,10 +26,10 @@ const links = [
   ],
   [
     {
-      label: isMobileOrTablet ? "" : t("me"),
+      label: isMobileOrTablet ? "" : "me",
       to: "/me",
       avatar: {
-        src: "https://cdn.discordapp.com/attachments/775822548519616562/1272954903362404354/0d4cc9343433b6d6313f0ef6a10119ba.jpg?ex=66bcdb23&is=66bb89a3&hm=ed8e9e0f12ac6bf227af2a21bc748b8197cdecd2501e1458db2678a9c6217775&",
+        src: "https://4.downloader.disk.yandex.com.tr/preview/2071693422822b5d8bbc8acedd5881138dd2184861ff745119aa0c9cf213fe86/inf/Uc_w_QW5QBOdwlN08m5wjixh1YWa10xfI_BZp4si9j-0BhfoIrcuXB61-Aoy0UpUOHMif62gtjt6UiAOFf1JYw%3D%3D?uid=1129069430&filename=11386f832e2ce273acb7baa26cc7fcbe.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=1129069430&tknv=v2&size=1708x794",
       },
       badge: {
         id: "status",
@@ -56,33 +53,3 @@ const links = [
     class="border-gray-200 dark:border-gray-800"
   />
 </template>
-
-<i18n lang="yaml">
-en:
-  me: "me"
-  home: "Home"
-  projects: "Projects"
-  blog: "Blog"
-  idle: "idle"
-  dnd: "dnd"
-  online: "online"
-  offline: "offline"
-tr:
-  me: "ben"
-  home: "Ana Sayfa"
-  projects: "Projeler"
-  blog: "Blog"
-  idle: "boşta"
-  dnd: "meşgul"
-  online: "çevrimiçi"
-  offline: "çevrimdışı"
-ja:
-  me: "私"
-  home: "ホーム"
-  projects: "プロジェクト"
-  blog: "ブログ"
-  idle: "アイドル"
-  dnd: "拒否"
-  online: "オンライン"
-  offline: "オフライン"
-</i18n>

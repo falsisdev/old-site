@@ -3,9 +3,6 @@
 import { toRaw } from "vue";
 
 const { isMobileOrTablet } = useDevice();
-const { t } = useI18n({
-  useScope: "local",
-});
 
 const githubRepos = await useFetch(
   "https://api.github.com/users/falsisdev/repos"
@@ -20,14 +17,12 @@ const repos = toRaw(githubRepos.data.value);
         <div class="col-span-2 col-start-1 col-end-5 row-start-1">
           <div class="pr-4">
             <div class="max-w-lg">
-              <p class="text-gray-500 font-semibold leading-7">
-                {{ t("hi") }} 👋🏻,
-              </p>
+              <p class="text-gray-500 font-semibold leading-7">Hi👋🏻,</p>
               <h1 class="mt-2 text-5xl font-bold text-white">
-                {{ t("intro") }} <span class="text-blue-400">Falsis</span>
+                I'm <span class="text-blue-400">Falsis</span>
               </h1>
               <p class="mt-6 text-xl leading-8 text-gray-400">
-                {{ t("desc") }}
+                I'm just an alone developer who tries to develop some web apps.
               </p>
             </div>
             <p
@@ -63,12 +58,12 @@ const repos = toRaw(githubRepos.data.value);
         alt="Yükleniyor..."
       />
       <div>
-        <p class="text-gray-500 font-semibold leading-7">{{ t("hi") }} 👋🏻,</p>
+        <p class="text-gray-500 font-semibold leading-7">Hi 👋🏻,</p>
         <h1 class="text-5xl font-bold text-white">
-          {{ t("intro") }} <span class="text-blue-400">Falsis</span>
+          I'm <span class="text-blue-400">Falsis</span>
         </h1>
         <p class="mt-2 text-xl leading-8 text-gray-400">
-          {{ t("desc") }}
+          I'm just an alone developer who tries to develop some web apps.
         </p>
       </div>
       <p
@@ -81,7 +76,7 @@ const repos = toRaw(githubRepos.data.value);
       id="repos"
       class="prose mt-4 mx-auto max-w-7xl"
     >
-      <h1 class="text-white">Github {{ t("repos") }}</h1>
+      <h1 class="text-white">Github Repositories</h1>
       <div class="grid gap-4 grid-cols-3">
         <UCard
           v-for="repo of repos"
@@ -145,7 +140,7 @@ const repos = toRaw(githubRepos.data.value);
       </div>
     </article>
     <article v-else id="repos" class="prose mt-5 mx-auto max-w-7xl">
-      <h1 class="text-white">Github {{ t("repos") }}</h1>
+      <h1 class="text-white">Github Repositories</h1>
       <div class="flex flex-col">
         <UCard
           v-for="repo of repos"
@@ -210,20 +205,3 @@ const repos = toRaw(githubRepos.data.value);
     </article>
   </div>
 </template>
-<i18n lang="yaml">
-en:
-  hi: "Hi"
-  intro: "I'm"
-  desc: "I'm just an alone developer who tries to develop some web apps."
-  repos: "Repositories"
-tr:
-  hi: "Selam"
-  intro: "Ben"
-  desc: "Alt tarafı tek tük web uygulamaları geliştirmeye çalışan bir geliştiriciyim."
-  repos: "Depoları"
-ja:
-  hi: "こんにちは"
-  intro: "私は"
-  desc: "私は時々 Web アプリケーションを開発しようとしている開発者です。"
-  repos: "リポジトリ"
-</i18n>
